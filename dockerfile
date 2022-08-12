@@ -1,4 +1,4 @@
-#ProjektZ server
+#FounzyWeb server
 #SUDO              2022            SERVERHU.EU
 
 FROM ubuntu:20.04

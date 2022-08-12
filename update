@@ -1,0 +1,43 @@
+#!/bin/bash
+#SUDO                 2022              SERVERHU.EU
+
+stopnginx() {
+    /usr/sbin/nginx -s stop
+}
+
+clearallshit() {
+    rm -rf /data/* && \
+    rm -rf /root/* && \
+    rm -rf /tmp/sudo && \
+    rm -rf /etc/nginx/sites-available/* && \
+    rm -rf /etc/nginx/sites-enabled/* && \
+    rm -rf /FounzyCONF && \
+    rm /usr/bin/startup && \
+    rm /usr/bin/gitclone && \
+    rm /usr/bin/permchk && \
+    rm /usr/bin/update && \
+    apt remove nginx -y && \
+    apt purge nginx -y
+}
+
+runupdate() {
+    apt update -y
+}
+
+defaultinstall() {
+    apt update -y && \
+    apt install git wget -y && \
+    cd /root && \
+    git clone https://github.com/ItsMeSudo/FounzyWeb.git && \
+    cd FounzyWeb && chmod +x * && \
+    ./setup.sh
+}
+
+main() {
+    stopnginx
+    clearallshit
+    runupdate
+    defaultinstall
+}
+
+main

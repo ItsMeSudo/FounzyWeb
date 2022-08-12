@@ -1,0 +1,6 @@
+#!/bin/bash
+#SUDO                 2022              SERVERHU.EU
+
+chmod -R 755 /data && \
+chown -R www-data:www-data /data && \
+chown -R www-data:www-data /data/*
