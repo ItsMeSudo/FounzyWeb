@@ -1,0 +1,15 @@
+#!/bin/bash
+#SUDO                 2022              SERVERHU.EU
+
+url=$1
+basename=$(basename $url)
+filename=${basename%.*}
+echo $filename
+
+clone() {
+    rm -rf /data/* && \
+    cd /tmp/sudo && \
+    rm -rf * && \
+    git clone $url && \
+    mv /tmp/sudo/$filename/* /data
+}
