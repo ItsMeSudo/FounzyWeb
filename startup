@@ -4,6 +4,7 @@ st () {
     /usr/sbin/nginx -s stop && \
     /usr/sbin/nginx && \
     /bin/bash
+    curl localhost
 }
 
 normal_startup() {
