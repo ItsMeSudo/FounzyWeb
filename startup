@@ -2,8 +2,9 @@
 #SUDO                 2022              SERVERHU.EU
 st () {
     /usr/sbin/nginx -s stop && \
+    sleep 2 && \
     /usr/sbin/nginx && \
-    /bin/bash
+    /bin/bash && \
     curl localhost
 }
 
