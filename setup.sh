@@ -4,7 +4,7 @@
 cd /root && \
     apt install -y nginx unzip wget curl git && \
     mkdir -p /tmp/sudo && \
-    unlink /etc/nginx/sites-enabled/default && \
+    #unlink /etc/nginx/sites-enabled/default && \
     cd /root/FounzyWeb && \
     sed -i 's/\r//' /root/FounzyWeb/gitclone && \
     sed -i 's/\r//' /root/FounzyWeb/permchk && \
