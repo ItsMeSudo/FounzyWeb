@@ -1,0 +1,24 @@
+#!/bin/bash
+#SUDO                 2022              SERVERHU.EU
+st () {
+    /usr/sbin/nginx -s stop > /dev/null 2>&1 & && \
+    /usr/sbin/nginx && \
+    /bin/bash
+}
+
+normal_startup() {
+    echo "A mappa nem üres" && \
+    st
+}
+
+emptystart() {
+    echo "A mappa üres" && \
+    mv /FounzyCONF/index.html /data && \
+    st
+}
+
+if find /data -mindepth 1 -maxdepth 1 | read; then
+   normal_startup
+else
+   emptystart
+fi
