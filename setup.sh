@@ -4,7 +4,6 @@
 cd /root && \
     apt install -y nginx unzip wget curl git && \
     mkdir -p /tmp/sudo && \
-    #unlink /etc/nginx/sites-enabled/default && \
     cd /root/FounzyWeb && \
     sed -i 's/\r//' /root/FounzyWeb/gitclone && \
     sed -i 's/\r//' /root/FounzyWeb/permchk && \
@@ -19,4 +18,5 @@ cd /root && \
     mv /root/FounzyWeb/index.html /FounzyCONF && \
     rm dockerfile && \
     ln -s /FounzyCONF/Founzy.conf /etc/nginx/sites-available/Founzy.conf && \
-    ln -s /FounzyCONF/Founzy.conf /etc/nginx/sites-enabled/Founzy.conf
+    ln -s /FounzyCONF/Founzy.conf /etc/nginx/sites-enabled/Founzy.conf && \
+    unlink /etc/nginx/sites-enabled/default
