@@ -13,3 +13,5 @@ clone() {
     git clone $url && \
     mv /tmp/sudo/$filename/* /data
 }
+
+clone
