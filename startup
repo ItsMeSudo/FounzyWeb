@@ -1,7 +1,7 @@
 #!/bin/bash
 #SUDO                 2022              SERVERHU.EU
 st () {
-    /usr/sbin/nginx -s stop > /dev/null 2>&1 & && \
+    /usr/sbin/nginx -s stop && \
     /usr/sbin/nginx && \
     /bin/bash
 }
