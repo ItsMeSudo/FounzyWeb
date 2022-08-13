@@ -1,4 +1,5 @@
 #!/bin/bash
+#FounzyWeb server  &&&& DEBIAN
 #SUDO                 2022              SERVERHU.EU
 
 stopnginx() {
