@@ -7,12 +7,25 @@ basename=$(basename $url)
 filename=${basename%.*}
 echo $filename
 
-clone() {
-    rm -rf /data/* && \
-    cd /tmp/sudo && \
-    rm -rf * && \
-    git clone $url && \
-    mv /tmp/sudo/$filename/* /data
+gitshit() {
+GIT_TERMINAL_PROMPT=0
+echo $GIT_TERMINAL_PROMPT
 }
 
+clone() {
+    cd /tmp/sudo
+    rm -rf *
+
+    if ! (GIT_TERMINAL_PROMPT=0 git clone $url) then
+        echo "Hibás link"
+        exit 1
+    else
+        echo "Success"
+        rm -rf /data/*
+        mv /tmp/sudo/$filename/* /data
+    fi
+
+}
+
+gitshit
 clone
